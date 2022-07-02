@@ -8,19 +8,16 @@ import json
 st.set_page_config(layout = 'wide')
 
 st.title('World Happiness Case Study')
-st.markdown('Happiness is related to our day to day lives, and the survey results collected from people of different countries determine the ladder score of the country, in other words, the happiness rate. The rankings of national happiness are based on a Cantril ladder survey. Nationally representative samples of respondents are asked to think of a ladder, with the best possible life for them being a 10, and the worst possible life being a 0. They are then asked to rate their own current lives on that 0 to 10 scale. 6 factors that contribute to the happiness score are GDP per capita, social support, life expectancy, freedom to make choices, generosity, and perception of corruption.')
-st.markdown('In this case study, we will look at the relationsip of each happiness factor to the happiness ladder score, observe changes in the happiness ranking from 2005 - 2021, and make comparisons between countries and regions. We will use a series of graphs and plots to visualize data, with the addition of some verbal analysis. We will also look for explainations for some eccentric happiness score fluctuations of certain countries by researching on their history.')
+st.markdown('The survey data gathered from respondents in various nations determines the countrys ladder score, or happiness rate, which is proportional to how happy we are in our daily lives. Based on a Cantril ladder poll, the national happiness rankings are shown. Respondents from nationally representative samples are asked to visualise a ladder, with a 10 representing their ideal life and a 0 representing their worst scenario. Then, using same 0–10 scale, they are asked to score their own current lifestyles. The GDP per capita, social support, life expectancy, freedom to make decisions, generosity, and sense of corruption are the six criteria that go into determining happiness.')
 
-st.header('Data Sets')
-st.markdown('For this case study, I used 2 data sets and combined them into one.')
-st.markdown('Source: ')
+st.markdown('Source of Data: ')
 df = pd.read_csv("world-happiness-report-2021.csv")
 st.dataframe(df)
-st.markdown('Source: ')
+st.markdown('Source of Data: ')
 df2 = pd.read_csv("world-happiness-report.csv")
 st.dataframe(df2)
 st.header('Data Cleaning')
-st.markdown('To combine the happiness data of 2021 and happiness data from 2005-2020, I renamed and added some columns the 2021 dataset to match the other dataset. Then I found the countries which both datasets included and combined the data.')
+st.markdown('I renamed the 2021 dataset and added a few fields to make it consistent with the other dataset in order to merge it with the happiness data from 2005 to 2020. The data was then integrated once I identified the nations that each databases covered.')
 
 code = '''world_happiness_21.rename({'Ladder score':'Life Ladder','Logged GDP per capita':'Log GDP per capita',"Healthy life expectancy":"Healthy life expectancy at birth"},axis=1,inplace=True)
 world_happiness_21["year"] = 2021
