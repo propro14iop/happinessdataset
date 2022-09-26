@@ -7,7 +7,7 @@ import json
 
 st.set_page_config(layout = 'wide')
 
-st.title('World Happiness Case Study')
+st.title('World Happiness Case Study 2022 - Edward Huang')
 st.markdown(' This data is from a survey conducted by the sustainable goals group. The survey data gathered from respondents in various nations determines the countrys ladder score, or happiness rate, which is proportional to how happy we are in our daily lives. Based on a Cantril ladder poll, the national happiness rankings are shown. Respondents from nationally representative samples are asked to visualise a ladder, with a 10 representing their ideal life and a 0 representing their worst scenario. Then, using same 0–10 scale, they are asked to score their own current lifestyles. The GDP per capita, social support, life expectancy, freedom to make decisions, generosity, and sense of corruption are the six criteria that go into determining happiness.')
 
 st.markdown('Source of Data: ')
