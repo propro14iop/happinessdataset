@@ -16,7 +16,7 @@ st.dataframe(df)
 st.markdown('Source of Data: ')
 df2 = pd.read_csv("world-happiness-report.csv")
 st.dataframe(df2)
-st.header('Data Cleaning')
+st.header('Data Cleaning/Data Filtering')
 st.markdown('I renamed the 2021 dataset and added a few fields to make it consistent with the other dataset in order to merge it with the happiness data from 2005 to 2020. The data was then integrated once I identified the nations that each databases covered.')
 
 code = '''world_happiness_21.rename({'Ladder score':'Life Ladder','Logged GDP per capita':'Log GDP per capita',"Healthy life expectancy":"Healthy life expectancy at birth"},axis=1,inplace=True)
@@ -83,7 +83,7 @@ scatterfig = px.scatter(merged_table, x= xscatter, y = yscatter, color = 'Region
 col6.plotly_chart(scatterfig)
 col5.markdown('You may evaluate the association between many aspects of happiness using this scatter plot. Additionally, we can see from this plot that social support, healthy life expectancy at birth, and log GDP per capita are the three elements most closely related to the life ladder (to reach this conclusion, set "ladder score" on one axis and try assigning other variables to the other axis). Similarly, we may deduce that generosity, views of corruption, and year are the three factors that are most adversely connected with the life ladder. These outcomes support the inferences we formed from the heat map even more.')
 
-st.header('Regional Comparasons')
+st.header('Regional Comparisons')
 st.subheader('Choropleth Map')
 col9,col10 = st.columns([2,5])
 col9.markdown('You may have observed that the various locations indicated through the various coloured dots appear to be focused in addition to learning which factors are most and least related to life ladder score. I made a globe-shaped choropleth map to better represent the life ladder by area.')
